@@ -7,9 +7,10 @@ public class ifCetakKRS03 {
         System.out.println("Apakah UKT sudah lunas? (true/false): ");
         boolean uktLunas = sc.nextBoolean();
 
-    if (uktLunas){
-        System.out.println("Pembayaran UKT Terverifikasi");
-        System.out.println("Silahkan Cetak KRS dan minta tanda tangan DPA");
-    }
+        if (uktLunas) {
+            System.out.println("Pembayaran UKT Terverifikasi");
+            System.out.println("Silahkan Cetak KRS dan minta tanda tangan DPA");
+        }
+        sc.close();
     }
 }

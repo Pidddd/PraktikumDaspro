@@ -9,7 +9,7 @@ public class sistemPerpus {
         System.out.print("Apakah membawa KTM? (true/false): ");
         ktm = sc.nextBoolean();
 
-        System.out.print("Apakah sudah registrasi? (true/false): ");
+        System.out.print("Apakah sudah Registrasi? (true/false): ");
         registrasi = sc.nextBoolean();
 
         if (ktm || registrasi) {

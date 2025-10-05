@@ -17,7 +17,6 @@ public class sistemPerpus {
         } else {
             System.out.println("Dilarang Masuk");
         }
-
         sc.close();
     }
 }

@@ -27,5 +27,6 @@ public class ifElseCetakKRS03 {
         } else {
             System.out.println("Semester Tidak Ada");
         }
+        sc.close();
     }
 }

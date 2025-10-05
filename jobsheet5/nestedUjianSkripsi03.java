@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class nestedUjianSkripsi03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -29,5 +28,6 @@ public class nestedUjianSkripsi03 {
         }
         System.out.println(pesan);
 
+        sc.close();
     }
 }

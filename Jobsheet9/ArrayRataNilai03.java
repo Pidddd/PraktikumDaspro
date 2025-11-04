@@ -36,7 +36,6 @@ public class ArrayRataNilai03 {
         double rataLulus = (jumlahLulus > 0) ? totalLulus / jumlahLulus : 0;
         double rataTidakLulus = (jumlahTidakLulus > 0) ? totalTidakLulus / jumlahTidakLulus : 0;
 
-        // Tampilkan hasil
         System.out.println("Rata-rata nilai keseluruhan = " + rataNilai);
         System.out.println("Jumlah mahasiswa yang lulus = " + jumlahLulus);
         System.out.println("Jumlah mahasiswa yang tidak lulus = " + jumlahTidakLulus);

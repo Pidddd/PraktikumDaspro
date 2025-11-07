@@ -6,7 +6,6 @@ public class cafeKe2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // Deklarasi dan inisialisasi array menu
         String[] menu = {
             "Nasi Goreng", "Mie Goreng", "Roti Bakar",
             "Kentang Goreng", "Teh Tarik", "Cappucino", "Chocolate Ice"
@@ -22,7 +21,7 @@ public class cafeKe2 {
         System.out.print("\nMasukkan nama makanan yang ingin dicari: ");
         String cari = input.nextLine();
 
-        // Proses pencarian (Linear Search)
+        // Proses pencarian 
         boolean ditemukan = false;
         int posisi = -1;
 
@@ -34,7 +33,6 @@ public class cafeKe2 {
             }
         }
 
-        // Output hasil pencarian
         System.out.println("\n=== HASIL PENCARIAN ===");
         if (ditemukan) {
             System.out.println("Menu \"" + cari + "\" tersedia di daftar (posisi ke-" + (posisi + 1) + ").");

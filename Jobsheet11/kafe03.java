@@ -29,24 +29,52 @@ public class kafe03 {
         System.out.println("Silakan pilih menu yang Anda inginkan.");
     }
 
-    public static int hitungTotalHarga03(int pilihanMenu, int banyakItem) {
+    public static int hitungTotalHarga03(int pilihanMenu, int banyakItem, String kodePromo) {
         int[] hargaItems = { 15000, 20000, 22000, 12000, 10000, 18000 };
-        int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
-        return hargaTotal;
+        int totalHarga = hargaItems[pilihanMenu - 1] * banyakItem;
+
+        if (kodePromo.equalsIgnoreCase("DISKON50")) {
+            System.out.println("Diskon 50% diterapkan");
+            totalHarga = totalHarga / 2;
+        } else if (kodePromo.equalsIgnoreCase("DISKON30")) {
+            System.out.println("Diskon 30% diterapkan");
+            totalHarga = totalHarga - (totalHarga * 30 / 100);
+        } else {
+            System.out.println("Kode promo invalid, tidak ada diskon");
+        }
+
+        return totalHarga;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Menu("andi", true, "Diskon50");
 
-        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilihanMenu = sc.nextInt();
-        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc.nextInt();
+        Menu("andi", true, "DISKON30");
 
-        int totalHarga = hitungTotalHarga03(pilihanMenu, banyakItem);
-        System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
+        int totalKeseluruhan = 0;
+        char ulang;
+
+        do {
+            System.out.print("Masukkan nomor menu: ");
+            int menu = sc.nextInt();
+
+            System.out.print("Masukkan jumlah item: ");
+            int jumlah = sc.nextInt();
+
+            System.out.print("Masukkan kode promo: ");
+            String kode = sc.next();
+
+            int total = hitungTotalHarga03(menu, jumlah, kode);
+            totalKeseluruhan += total;
+
+            System.out.print("Apakah ingin menambah pesanan? y atau n: ");
+            ulang = sc.next().charAt(0);
+
+        } while (ulang == 'y' || ulang == 'Y');
+
+        System.out.println("Total keseluruhan pesanan adalah Rp" + totalKeseluruhan);
 
         sc.close();
     }
+
 }

@@ -1,5 +1,7 @@
 package PraktikumDaspro.Jobsheet11;
 
+import java.util.Scanner;
+
 public class kafe03 {
     public static void Menu(String namaPelanggan, boolean isMember) {
         System.out.println("Selamat datang, " + namaPelanggan + "!");
@@ -17,7 +19,24 @@ public class kafe03 {
         System.out.println("Silakan pilih menu yang Anda inginkan.");
     }
 
+    public static int hitungTotalHarga03(int pilihanMenu, int banyakItem) {
+        int[] hargaItems = { 15000, 20000, 22000, 12000, 10000, 18000 };
+        int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
+        return hargaTotal;
+    }
+
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         Menu("andi", true);
+
+        System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
+        int pilihanMenu = sc.nextInt();
+        System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+        int banyakItem = sc.nextInt();
+
+        int totalHarga = hitungTotalHarga03(pilihanMenu, banyakItem);
+        System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
+
+        sc.close();
     }
 }
